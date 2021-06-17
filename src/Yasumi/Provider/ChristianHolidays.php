@@ -16,9 +16,12 @@ namespace Yasumi\Provider;
 
 use DateInterval;
 use DateTime;
+use Exception;
+use InvalidArgumentException;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
+use function extension_loaded;
 
 /**
  * Trait ChristianHolidays.
@@ -42,10 +45,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function easter(
         int $year,
@@ -71,10 +76,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function easterMonday(
         int $year,
@@ -106,10 +113,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function ascensionDay(
         int $year,
@@ -138,10 +147,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function pentecost(
         int $year,
@@ -170,10 +181,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function pentecostMonday(
         int $year,
@@ -205,10 +218,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a type of 'other' is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function corpusChristi(
         int $year,
@@ -241,10 +256,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default observance is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function christmasEve(
         int $year,
@@ -274,10 +291,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function christmasDay(
         int $year,
@@ -307,10 +326,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function secondChristmasDay(
         int $year,
@@ -343,10 +364,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function allSaintsDay(
         int $year,
@@ -372,10 +395,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function assumptionOfMary(
         int $year,
@@ -405,10 +430,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function goodFriday(
         int $year,
@@ -442,10 +469,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function epiphany(
         int $year,
@@ -471,10 +500,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function ashWednesday(
         int $year,
@@ -507,10 +538,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function immaculateConception(
         int $year,
@@ -544,10 +577,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function stStephensDay(
         int $year,
@@ -581,10 +616,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function stJosephsDay(
         int $year,
@@ -611,10 +648,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function maundyThursday(
         int $year,
@@ -647,10 +686,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function stGeorgesDay(
         int $year,
@@ -678,10 +719,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function stJohnsDay(
         int $year,
@@ -709,10 +752,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function annunciation(
         int $year,
@@ -737,7 +782,7 @@ trait ChristianHolidays
      *
      * @return DateTime date of Orthodox Easter
      *
-     * @throws \Exception
+     * @throws Exception
      *
      * @see https://en.wikipedia.org/wiki/Computus#Meeus.27s_Julian_algorithm
      * @see https://www.php.net/manual/en/function.easter-date.php#83794
@@ -776,10 +821,12 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
+     * @return Holiday
+     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
-     * @throws \InvalidArgumentException
-     * @throws \Exception
+     * @throws InvalidArgumentException
+     * @throws Exception
      */
     public function reformationDay(
         int $year,
@@ -813,7 +860,7 @@ trait ChristianHolidays
      *
      * @return DateTime date of Easter
      *
-     * @throws \Exception
+     * @throws Exception
      *
      * @see  easter_days
      * @see https://github.com/php/php-src/blob/c8aa6f3a9a3d2c114d0c5e0c9fdd0a465dbb54a5/ext/calendar/easter.c
@@ -822,7 +869,7 @@ trait ChristianHolidays
      */
     protected function calculateEaster(int $year, string $timezone): DateTime
     {
-        if (\extension_loaded('calendar')) {
+        if (extension_loaded('calendar')) {
             $easterDays = easter_days($year);
         } else {
             $golden = ($year % 19) + 1; // The Golden Number
