@@ -60,6 +60,7 @@ class Chile extends AbstractProvider
         $this->calculateAllSaintsDay();
         $this->calculateImmaculateConception();
         $this->calculateChristmasDay();
+        $this->calculateBankHoliday();
     }
 
     public function getSources(): array
@@ -316,6 +317,24 @@ class Chile extends AbstractProvider
                 ['es_CL' => 'Día de las Glorias Navales', 'en_US' => 'Navy Day'],
                 new DateTime("$this->year-05-21", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
+            ));
+        }
+    }
+
+    /**
+     * Instated by Ley General de Bancos.
+     *
+     * @throws Exception
+     */
+    private function calculateBankHoliday()
+    {
+        if ($this->year >= 1997) {
+            $this->addHoliday(new Holiday(
+                'bankHoliday',
+                ['es_CL' => 'Feriado Bancario', 'en_US' => 'Bank Holiday'],
+                new DateTime("$this->year-12-31", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
+                $this->locale,
+                Holiday::TYPE_BANK
             ));
         }
     }
