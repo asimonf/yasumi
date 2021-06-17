@@ -453,6 +453,44 @@ trait ChristianHolidays
     }
 
     /**
+     * Holy Saturday.
+     *
+     * Holy Saturday (Latin: Sabbatum Sanctum), the Saturday of Holy Week, also known as Holy and Great Saturday, the
+     * Great Sabbath, Black Saturday, Joyous Saturday, Hallelujah Saturday (in Portugal) or Easter Eve,[1] and called
+     * "Joyous Saturday" or "the Saturday of Light" among Coptic Christians, is the day after Good Friday. It is the
+     * day before Easter and the last day of Holy Week in which Christians prepare for Easter. It commemorates the day
+     * that Jesus' body lay in the tomb and the Harrowing of Hell.
+     *
+     * @param int    $year     the year for which Holy Saturday need to be created
+     * @param string $timezone the timezone in which Holy Saturday is celebrated
+     * @param string $locale   the locale for which Holy Saturday need to be displayed in.
+     * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
+     *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
+     *
+     * @return Holiday
+     *
+     * @throws InvalidDateException
+     * @throws UnknownLocaleException
+     * @throws InvalidArgumentException
+     * @throws Exception
+     */
+    public function holySaturday(
+        int $year,
+        string $timezone,
+        string $locale,
+        string $type = Holiday::TYPE_OFFICIAL
+    ): Holiday {
+        return new Holiday(
+            'holySaturday',
+            [],
+            $this->calculateEaster($year, $timezone)->sub(new DateInterval('P1D')),
+            $locale,
+            $type
+        );
+    }
+
+
+    /**
      * Epiphany.
      *
      * Epiphany is a Christian feast day that celebrates the revelation of God the Son as a human being in Jesus Christ.
