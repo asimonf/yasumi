@@ -17,11 +17,11 @@ namespace Yasumi\Provider;
 use DateInterval;
 use DateTime;
 use Exception;
+use function extension_loaded;
 use InvalidArgumentException;
 use Yasumi\Exception\InvalidDateException;
 use Yasumi\Exception\UnknownLocaleException;
 use Yasumi\Holiday;
-use function extension_loaded;
 
 /**
  * Trait ChristianHolidays.
@@ -44,8 +44,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which Easter need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -75,8 +73,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which Easter Monday need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -113,8 +109,6 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
@@ -147,8 +141,6 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
@@ -180,8 +172,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which Pentecost (Whitmonday) need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -217,8 +207,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which Corpus Christi need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default a type of 'other' is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -256,8 +244,6 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default observance is considered.
      *
-     * @return Holiday
-     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
@@ -291,8 +277,6 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
@@ -325,8 +309,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which the Second Christmas Day / Boxing Day need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -364,8 +346,6 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
@@ -394,8 +374,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which the day of the Assumption of Mary need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -430,8 +408,6 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
@@ -463,11 +439,9 @@ trait ChristianHolidays
      *
      * @param int    $year     the year for which Holy Saturday need to be created
      * @param string $timezone the timezone in which Holy Saturday is celebrated
-     * @param string $locale   the locale for which Holy Saturday need to be displayed in.
+     * @param string $locale   the locale for which Holy Saturday need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -489,7 +463,6 @@ trait ChristianHolidays
         );
     }
 
-
     /**
      * Epiphany.
      *
@@ -506,8 +479,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which Epiphany need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -537,8 +508,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which Ash Wednesday need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -575,8 +544,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which Immaculate Conception need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -615,8 +582,6 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
@@ -654,8 +619,6 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
@@ -685,8 +648,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which Maundy Thursday need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -724,8 +685,6 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
@@ -757,8 +716,6 @@ trait ChristianHolidays
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
      *
-     * @return Holiday
-     *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
      * @throws InvalidArgumentException
@@ -789,8 +746,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which the Annunciation need to be displayed in
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException
@@ -858,8 +813,6 @@ trait ChristianHolidays
      * @param string $locale   the locale for which St. John's Day need to be displayed in.
      * @param string $type     The type of holiday. Use the following constants: TYPE_OFFICIAL, TYPE_OBSERVANCE,
      *                         TYPE_SEASON, TYPE_BANK or TYPE_OTHER. By default an official holiday is considered.
-     *
-     * @return Holiday
      *
      * @throws InvalidDateException
      * @throws UnknownLocaleException

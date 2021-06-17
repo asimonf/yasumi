@@ -22,13 +22,14 @@ use function in_array;
 use Yasumi\Holiday;
 
 /**
- * Provider for all holidays in Chile
+ * Provider for all holidays in Chile.
  *
  * @author Alberto Simón Francés <alberto@simon.ph>
  */
 class Chile extends AbstractProvider
 {
-    use CommonHolidays, ChristianHolidays;
+    use CommonHolidays;
+    use ChristianHolidays;
 
     /**
      * Code to identify this Holiday Provider. Typically this is the ISO3166 code corresponding to the respective
@@ -38,6 +39,7 @@ class Chile extends AbstractProvider
 
     /**
      * Initialize country holidays.
+     *
      * @throws Exception
      */
     public function initialize(): void
@@ -63,19 +65,16 @@ class Chile extends AbstractProvider
     public function getSources(): array
     {
         return [
-            'https://feriados.cl/leyes.htm'
+            'https://feriados.cl/leyes.htm',
         ];
     }
 
     /**
-     * All Sundays are considered a holiday as per Ley 2977
-     *
-     * @param DateTimeInterface $date
-     * @return bool
+     * All Sundays are considered a holiday as per Ley 2977.
      */
     public function isHoliday(DateTimeInterface $date): bool
     {
-        if ($date->format('N') == 7) {
+        if (7 == $date->format('N')) {
             return true;
         }
 
@@ -83,7 +82,7 @@ class Chile extends AbstractProvider
     }
 
     /**
-     * Instated by Ley 2977
+     * Instated by Ley 2977.
      *
      * @throws Exception
      */
@@ -100,7 +99,7 @@ class Chile extends AbstractProvider
     }
 
     /**
-     * Instated by Ley 2.977 and suspended by Ley 16.840
+     * Instated by Ley 2.977 and suspended by Ley 16.840.
      *
      * @throws Exception
      */
@@ -129,7 +128,7 @@ class Chile extends AbstractProvider
                 new DateTime("$this->year-06-29", DateTimeZoneFactory::getDateTimeZone($this->timezone)),
                 $this->locale
             ));
-        } else if ($year >= 2000) {
+        } elseif ($year >= 2000) {
             $date = new DateTime("$this->year-06-29", DateTimeZoneFactory::getDateTimeZone($this->timezone));
             $this->modifyAccordingToLey19668($date);
 
@@ -143,7 +142,8 @@ class Chile extends AbstractProvider
     }
 
     /**
-     * Instated by Ley 3810 and modified by Ley 19668
+     * Instated by Ley 3810 and modified by Ley 19668.
+     *
      * @throws Exception
      */
     private function calculateColumbusDay(): void
@@ -183,7 +183,7 @@ class Chile extends AbstractProvider
     }
 
     /**
-     * Instated by Ley 2977
+     * Instated by Ley 2977.
      *
      * @throws Exception
      */
@@ -226,7 +226,7 @@ class Chile extends AbstractProvider
 
             // Ley 20.215 declares the 17th or the 20th as holidays depending on which day of the week the 18th falls
             if ($this->year >= 2007 && in_array($weekDay, [2, 3])) {
-                $day = $weekDay == 2 ? 17 : 20;
+                $day = 2 == $weekDay ? 17 : 20;
 
                 $this->addHoliday(new Holiday(
                     'nationalDay',
@@ -234,7 +234,7 @@ class Chile extends AbstractProvider
                     new DateTime("$this->year-09-$day", $timezone),
                     $this->locale
                 ));
-            } else if ($this->year >= 2017 && $weekDay == 6) { // Declared by Ley 20.983
+            } elseif ($this->year >= 2017 && 6 == $weekDay) { // Declared by Ley 20.983
                 $this->addHoliday(new Holiday(
                     'nationalDay',
                     ['es_CL' => 'Fiestas Patrias', 'en_US' => 'National Day'],
@@ -322,15 +322,12 @@ class Chile extends AbstractProvider
 
     // Helpers
 
-    /**
-     * @param DateTime $date
-     */
     private function modifyAccordingToLey19668(DateTime $date): void
     {
         if (in_array($date->format('N'), [2, 3, 4])) {
             // If the day is a Tuesday, Wednesday or Thursday, it must be moved to the Monday of the same week
             $date->modify('previous monday');
-        } elseif ($date->format('N') == 5) {
+        } elseif (5 == $date->format('N')) {
             // If the day is a Friday, it must be moved to the next Monday
             $date->modify('next monday');
         }
